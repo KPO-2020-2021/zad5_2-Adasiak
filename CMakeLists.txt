@@ -48,6 +48,7 @@ set(SOURCES          # All .cpp files in src/
     src/Scena.cpp
     src/Ostroslup.cpp
     src/Gran.cpp
+    src/PPlaskowyz.cpp
 
 )
 set(TESTFILES        # All .cpp files in tests/

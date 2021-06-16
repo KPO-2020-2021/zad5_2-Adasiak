@@ -85,7 +85,8 @@ main_EXTERNAL_OBJECTS = \
 "/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/build/CMakeFiles/engine.dir/src/matrix3x3.cpp.o" \
 "/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/build/CMakeFiles/engine.dir/src/Scena.cpp.o" \
 "/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/build/CMakeFiles/engine.dir/src/Ostroslup.cpp.o" \
-"/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/build/CMakeFiles/engine.dir/src/Gran.cpp.o"
+"/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/build/CMakeFiles/engine.dir/src/Gran.cpp.o" \
+"/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/build/CMakeFiles/engine.dir/src/PPlaskowyz.cpp.o"
 
 main: CMakeFiles/main.dir/app/main.cpp.o
 main: CMakeFiles/engine.dir/src/example.cpp.o
@@ -98,6 +99,7 @@ main: CMakeFiles/engine.dir/src/matrix3x3.cpp.o
 main: CMakeFiles/engine.dir/src/Scena.cpp.o
 main: CMakeFiles/engine.dir/src/Ostroslup.cpp.o
 main: CMakeFiles/engine.dir/src/Gran.cpp.o
+main: CMakeFiles/engine.dir/src/PPlaskowyz.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: CMakeFiles/main.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable main"

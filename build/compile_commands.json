@@ -51,6 +51,11 @@
 },
 {
   "directory": "/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/build",
+  "command": "/usr/bin/c++  -DENABLE_DOCTEST_IN_LIBRARY -I/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/build -I/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/include -I/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/external/doctest/doctest  -g   -Wall -Wextra -Wpedantic -Wno-switch-enum -Werror -std=c++17 -o CMakeFiles/engine.dir/src/PPlaskowyz.cpp.o -c /home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/PPlaskowyz.cpp",
+  "file": "/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/PPlaskowyz.cpp"
+},
+{
+  "directory": "/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/build",
   "command": "/usr/bin/c++  -DENABLE_DOCTEST_IN_LIBRARY -I/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/build -I/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/include -I/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/external/doctest/doctest  -g   -Wall -Wextra -Wpedantic -Wno-switch-enum -Werror -std=c++17 -o CMakeFiles/main.dir/app/main.cpp.o -c /home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/app/main.cpp",
   "file": "/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/app/main.cpp"
 },

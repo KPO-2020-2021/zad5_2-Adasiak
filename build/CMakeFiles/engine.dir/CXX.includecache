@@ -29,6 +29,8 @@ BrylaGeometryczna.hh
 ../include/BrylaGeometryczna.hh
 Dron.hh
 ../include/Dron.hh
+Przeszkody.hh
+../include/Przeszkody.hh
 iostream
 -
 
@@ -46,10 +48,58 @@ fstream
 string
 -
 
+../include/Ostroslup.hh
+BrylaGeometryczna.hh
+../include/BrylaGeometryczna.hh
+Przeszkody.hh
+../include/Przeszkody.hh
+Dron.hh
+../include/Dron.hh
+iostream
+-
+
+../include/PPlaskowyz.hh
+Przeszkody.hh
+../include/Przeszkody.hh
+stdlib.h
+-
+
 ../include/Prostopadloscian.hh
 BrylaGeometryczna.hh
 ../include/BrylaGeometryczna.hh
 stdlib.h
+-
+
+../include/Przeszkody.hh
+Dron.hh
+../include/Dron.hh
+BrylaGeometryczna.hh
+../include/BrylaGeometryczna.hh
+
+../include/Scena.hh
+vector
+-
+vector.hh
+../include/vector.hh
+matrix3x3.hh
+../include/matrix3x3.hh
+fstream
+-
+string
+-
+unistd.h
+-
+memory
+-
+Dron.hh
+../include/Dron.hh
+Ostroslup.hh
+../include/Ostroslup.hh
+Gran.hh
+../include/Gran.hh
+PPlaskowyz.hh
+../include/PPlaskowyz.hh
+list
 -
 
 ../include/lacze_do_gnuplota.hh
@@ -92,7 +142,7 @@ cmath
 initializer_list
 -
 
-/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/Gran.cpp
-Gran.hh
-/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/Gran.hh
+/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/Scena.cpp
+Scena.hh
+/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/Scena.hh
 

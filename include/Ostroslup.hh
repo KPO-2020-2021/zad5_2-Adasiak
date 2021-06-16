@@ -1,10 +1,11 @@
 #pragma once
 
 #include "BrylaGeometryczna.hh"
+#include "Przeszkody.hh"
 #include "Dron.hh"
 #include <iostream>
 
-class Ostroslup : public BrylaGeometryczna
+class Ostroslup : public Przeszkody
 {
     protected:
     int nrprzeszkody;

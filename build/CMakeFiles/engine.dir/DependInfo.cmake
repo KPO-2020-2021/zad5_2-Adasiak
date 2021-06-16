@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/Gran.cpp" "/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/build/CMakeFiles/engine.dir/src/Gran.cpp.o"
   "/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/Graniastoslup6.cpp" "/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/build/CMakeFiles/engine.dir/src/Graniastoslup6.cpp.o"
   "/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/Ostroslup.cpp" "/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/build/CMakeFiles/engine.dir/src/Ostroslup.cpp.o"
+  "/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/PPlaskowyz.cpp" "/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/build/CMakeFiles/engine.dir/src/PPlaskowyz.cpp.o"
   "/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/Prostopadloscian.cpp" "/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/build/CMakeFiles/engine.dir/src/Prostopadloscian.cpp.o"
   "/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/Scena.cpp" "/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/build/CMakeFiles/engine.dir/src/Scena.cpp.o"
   "/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/example.cpp" "/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/build/CMakeFiles/engine.dir/src/example.cpp.o"

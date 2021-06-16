@@ -2,9 +2,10 @@
 
 #include "BrylaGeometryczna.hh"
 #include "Dron.hh"
+#include "Przeszkody.hh"
 #include <iostream>
 
-class Gran : public BrylaGeometryczna
+class Gran : public Przeszkody
 {
     protected:
     int nrprzeszkody;

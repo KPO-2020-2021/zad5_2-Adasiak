@@ -284,8 +284,6 @@ bool Dron::DodajTrasePrzelotu(PzG::LaczeDoGNUPlota &Lacze ,double x2, double y2)
 }
 
 
-
-
 /*!       
     \brief
     Animacja lotu drona Ftunkcja odpowiada za powolne wyswietlanie ruchu drona przez co mozemy sledzic na ekranie jego ruch 

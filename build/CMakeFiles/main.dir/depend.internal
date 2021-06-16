@@ -7,7 +7,9 @@ CMakeFiles/main.dir/app/main.cpp.o
  ../include/Gran.hh
  ../include/Graniastoslup6.hh
  ../include/Ostroslup.hh
+ ../include/PPlaskowyz.hh
  ../include/Prostopadloscian.hh
+ ../include/Przeszkody.hh
  ../include/Scena.hh
  ../include/matrix.hh
  ../include/matrix3x3.hh

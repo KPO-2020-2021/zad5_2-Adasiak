@@ -725,6 +725,33 @@ src/Ostroslup.cpp.s:
 	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/Ostroslup.cpp.s
 .PHONY : src/Ostroslup.cpp.s
 
+src/PPlaskowyz.o: src/PPlaskowyz.cpp.o
+
+.PHONY : src/PPlaskowyz.o
+
+# target to build an object file
+src/PPlaskowyz.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/PPlaskowyz.cpp.o
+.PHONY : src/PPlaskowyz.cpp.o
+
+src/PPlaskowyz.i: src/PPlaskowyz.cpp.i
+
+.PHONY : src/PPlaskowyz.i
+
+# target to preprocess a source file
+src/PPlaskowyz.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/PPlaskowyz.cpp.i
+.PHONY : src/PPlaskowyz.cpp.i
+
+src/PPlaskowyz.s: src/PPlaskowyz.cpp.s
+
+.PHONY : src/PPlaskowyz.s
+
+# target to generate assembly for a file
+src/PPlaskowyz.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/PPlaskowyz.cpp.s
+.PHONY : src/PPlaskowyz.cpp.s
+
 src/Prostopadloscian.o: src/Prostopadloscian.cpp.o
 
 .PHONY : src/Prostopadloscian.o
@@ -921,6 +948,9 @@ help:
 	@echo "... src/Ostroslup.o"
 	@echo "... src/Ostroslup.i"
 	@echo "... src/Ostroslup.s"
+	@echo "... src/PPlaskowyz.o"
+	@echo "... src/PPlaskowyz.i"
+	@echo "... src/PPlaskowyz.s"
 	@echo "... src/Prostopadloscian.o"
 	@echo "... src/Prostopadloscian.i"
 	@echo "... src/Prostopadloscian.s"

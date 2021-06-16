@@ -5,6 +5,13 @@
 #include "matrix3x3.hh"
 #include <fstream>
 #include <string>
+#include <unistd.h>
+#include <memory>
+#include "Dron.hh"
+#include "Ostroslup.hh"
+#include "Gran.hh"
+#include "PPlaskowyz.hh"
+#include <list>
 
 using namespace std;
 
@@ -21,6 +28,7 @@ class Scena
     string nazwa_pliku;
     string nazwa_pliku_do_zapisu;
     int k=0;// ilosc punktów na prostej
+    int nr=0;
     public:
 
     // Scena(Vector<3> scr, double dlugosc, double szerokosc, double glebokosc );
@@ -36,6 +44,8 @@ class Scena
     Vector<3> &operator [](int i){return scr1[i];}
     Vector<3> operator [](int i)const {return scr1[i];}
 
+
+    void add_basic_objects(PzG::LaczeDoGNUPlota &Lacze,Vector<3> place, double xwth, double ywth,int k,int rodzaj);
 
 
 };

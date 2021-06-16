@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/engine.dir/src/Gran.cpp.o"
   "CMakeFiles/engine.dir/src/Graniastoslup6.cpp.o"
   "CMakeFiles/engine.dir/src/Ostroslup.cpp.o"
+  "CMakeFiles/engine.dir/src/PPlaskowyz.cpp.o"
   "CMakeFiles/engine.dir/src/Prostopadloscian.cpp.o"
   "CMakeFiles/engine.dir/src/Scena.cpp.o"
   "CMakeFiles/engine.dir/src/example.cpp.o"

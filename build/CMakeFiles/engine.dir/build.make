@@ -187,6 +187,19 @@ CMakeFiles/engine.dir/src/Gran.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/src/Gran.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/Gran.cpp -o CMakeFiles/engine.dir/src/Gran.cpp.s
 
+CMakeFiles/engine.dir/src/PPlaskowyz.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/src/PPlaskowyz.cpp.o: ../src/PPlaskowyz.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/engine.dir/src/PPlaskowyz.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/src/PPlaskowyz.cpp.o -c /home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/PPlaskowyz.cpp
+
+CMakeFiles/engine.dir/src/PPlaskowyz.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/src/PPlaskowyz.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/PPlaskowyz.cpp > CMakeFiles/engine.dir/src/PPlaskowyz.cpp.i
+
+CMakeFiles/engine.dir/src/PPlaskowyz.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/src/PPlaskowyz.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/PPlaskowyz.cpp -o CMakeFiles/engine.dir/src/PPlaskowyz.cpp.s
+
 engine: CMakeFiles/engine.dir/src/example.cpp.o
 engine: CMakeFiles/engine.dir/src/lacze_do_gnuplota.cpp.o
 engine: CMakeFiles/engine.dir/src/Prostopadloscian.cpp.o
@@ -197,6 +210,7 @@ engine: CMakeFiles/engine.dir/src/matrix3x3.cpp.o
 engine: CMakeFiles/engine.dir/src/Scena.cpp.o
 engine: CMakeFiles/engine.dir/src/Ostroslup.cpp.o
 engine: CMakeFiles/engine.dir/src/Gran.cpp.o
+engine: CMakeFiles/engine.dir/src/PPlaskowyz.cpp.o
 engine: CMakeFiles/engine.dir/build.make
 
 .PHONY : engine

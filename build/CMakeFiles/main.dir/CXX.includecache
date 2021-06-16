@@ -29,6 +29,8 @@ BrylaGeometryczna.hh
 ../include/BrylaGeometryczna.hh
 Dron.hh
 ../include/Dron.hh
+Przeszkody.hh
+../include/Przeszkody.hh
 iostream
 -
 
@@ -49,9 +51,17 @@ string
 ../include/Ostroslup.hh
 BrylaGeometryczna.hh
 ../include/BrylaGeometryczna.hh
+Przeszkody.hh
+../include/Przeszkody.hh
 Dron.hh
 ../include/Dron.hh
 iostream
+-
+
+../include/PPlaskowyz.hh
+Przeszkody.hh
+../include/Przeszkody.hh
+stdlib.h
 -
 
 ../include/Prostopadloscian.hh
@@ -59,6 +69,12 @@ BrylaGeometryczna.hh
 ../include/BrylaGeometryczna.hh
 stdlib.h
 -
+
+../include/Przeszkody.hh
+Dron.hh
+../include/Dron.hh
+BrylaGeometryczna.hh
+../include/BrylaGeometryczna.hh
 
 ../include/Scena.hh
 vector
@@ -70,6 +86,20 @@ matrix3x3.hh
 fstream
 -
 string
+-
+unistd.h
+-
+memory
+-
+Dron.hh
+../include/Dron.hh
+Ostroslup.hh
+../include/Ostroslup.hh
+Gran.hh
+../include/Gran.hh
+PPlaskowyz.hh
+../include/PPlaskowyz.hh
+list
 -
 
 ../include/matrix.hh
@@ -120,6 +150,10 @@ string
 vector
 -
 unistd.h
+-
+list
+-
+memory
 -
 matrix3x3.hh
 /home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/app/matrix3x3.hh

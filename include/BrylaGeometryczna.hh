@@ -33,6 +33,7 @@ public:
     void obrotW(double kat);
     void obrotW1(double kat,Vector<3> b);
 
+    string nazwa(){ return nazwa_pliku_do_zapisu;}
 
     void zapis();
 
@@ -43,6 +44,9 @@ public:
     void set_Przesuniecie(Vector<3> droga){
         Przesuniecie=Przesuniecie+macierzobrotZ(katOZ)*(macierzobrotX(katOX)* (macierzobrotY(katOY)*droga));
     }
+
+        // string nazwa(){ return nazwa_pliku_do_zapisu;}
+
 };
 
 
