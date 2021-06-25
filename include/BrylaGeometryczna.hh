@@ -4,9 +4,10 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include "Przeszkody.hh"
 using namespace std;
 
-class BrylaGeometryczna
+class BrylaGeometryczna:public Przeszkody, public std::enable_shared_from_this< BrylaGeometryczna >
 {
 protected:
     vector<Vector<3>> pkt1;
@@ -33,7 +34,11 @@ public:
     void obrotW(double kat);
     void obrotW1(double kat,Vector<3> b);
 
-    string nazwa(){ return nazwa_pliku_do_zapisu;}
+    std::string nazwa(){ return nazwa_pliku_do_zapisu;}
+
+    std::string get_nazwa() const;
+
+
 
     void zapis();
 
@@ -45,41 +50,14 @@ public:
         Przesuniecie=Przesuniecie+macierzobrotZ(katOZ)*(macierzobrotX(katOX)* (macierzobrotY(katOY)*droga));
     }
 
+    double promien(){return sqrt(pow(srodek[0]-pkt1[0][0],2) + pow(srodek[1]-pkt1[0][1],2)+pow(srodek[2]-pkt1[0][2],2));}
+
+    Vector<3> wez_srodek() ;
+    
+    Vector<3> get_srodek() const ;
+    
+
+    void set_srodek(Vector<3> srodek);
         // string nazwa(){ return nazwa_pliku_do_zapisu;}
 
 };
-
-
-
- // BrylaGeometryczna operator*(Matrix<3> tmp)
-    // {
-    //     BrylaGeometryczna wynik;
-    //     for (int i = 0; i < 7; i++)
-    //     {
-
-    //         wynik[i] = tmp * (*this)[i];
-    //     }
-    //     return wynik;
-    // }
-
-
-    // BrylaGeometryczna operator*(Matrix<3> tmp)
-    // {
-    //     BrylaGeometryczna wynik;
-    //     for (int i = 0; i < 7; i++)
-    //     {
-
-    //         wynik[i] = tmp * wynik[i];
-    //     }
-    //     return wynik;
-    // }
-
-
-
-    // void OZ(double kat)
-    // {
-    //     BrylaGeometryczna wynik;
-    //     for (int i=0; i < (int)pkt1.size(); )
-    //     wynik = wynik * macierzobrotZ(kat);     
-
-    // }

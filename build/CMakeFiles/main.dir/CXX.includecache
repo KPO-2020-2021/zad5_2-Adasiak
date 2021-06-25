@@ -17,12 +17,30 @@ string
 -
 vector
 -
+Przeszkody.hh
+../include/Przeszkody.hh
 
 ../include/Dron.hh
 Prostopadloscian.hh
 ../include/Prostopadloscian.hh
 Graniastoslup6.hh
 ../include/Graniastoslup6.hh
+Przeszkody.hh
+../include/Przeszkody.hh
+unistd.h
+-
+list
+-
+lacze_do_gnuplota.hh
+../include/lacze_do_gnuplota.hh
+iomanip
+-
+memory
+-
+fstream
+-
+string
+-
 
 ../include/Gran.hh
 BrylaGeometryczna.hh
@@ -49,8 +67,6 @@ string
 -
 
 ../include/Ostroslup.hh
-BrylaGeometryczna.hh
-../include/BrylaGeometryczna.hh
 Przeszkody.hh
 ../include/Przeszkody.hh
 Dron.hh
@@ -61,6 +77,8 @@ iostream
 ../include/PPlaskowyz.hh
 Przeszkody.hh
 ../include/Przeszkody.hh
+Dron.hh
+../include/Dron.hh
 stdlib.h
 -
 
@@ -71,10 +89,20 @@ stdlib.h
 -
 
 ../include/Przeszkody.hh
-Dron.hh
-../include/Dron.hh
-BrylaGeometryczna.hh
-../include/BrylaGeometryczna.hh
+vector.hh
+../include/vector.hh
+vector
+-
+string
+-
+memory
+-
+unistd.h
+-
+list
+-
+iomanip
+-
 
 ../include/Scena.hh
 vector
@@ -99,7 +127,19 @@ Gran.hh
 ../include/Gran.hh
 PPlaskowyz.hh
 ../include/PPlaskowyz.hh
+Przeszkody.hh
+../include/Przeszkody.hh
 list
+-
+iomanip
+-
+
+../include/lacze_do_gnuplota.hh
+string
+-
+list
+-
+vector
 -
 
 ../include/matrix.hh

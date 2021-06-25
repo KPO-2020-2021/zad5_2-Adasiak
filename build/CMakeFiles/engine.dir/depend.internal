@@ -3,6 +3,7 @@
 
 CMakeFiles/engine.dir/src/BrylaGeometryczna.cpp.o
  ../include/BrylaGeometryczna.hh
+ ../include/Przeszkody.hh
  ../include/lacze_do_gnuplota.hh
  ../include/matrix.hh
  ../include/matrix3x3.hh
@@ -14,6 +15,7 @@ CMakeFiles/engine.dir/src/Dron.cpp.o
  ../include/Dron.hh
  ../include/Graniastoslup6.hh
  ../include/Prostopadloscian.hh
+ ../include/Przeszkody.hh
  ../include/lacze_do_gnuplota.hh
  ../include/matrix.hh
  ../include/matrix3x3.hh
@@ -36,6 +38,7 @@ CMakeFiles/engine.dir/src/Gran.cpp.o
 CMakeFiles/engine.dir/src/Graniastoslup6.cpp.o
  ../include/BrylaGeometryczna.hh
  ../include/Graniastoslup6.hh
+ ../include/Przeszkody.hh
  ../include/matrix.hh
  ../include/matrix3x3.hh
  ../include/size.hh
@@ -62,6 +65,7 @@ CMakeFiles/engine.dir/src/PPlaskowyz.cpp.o
  ../include/PPlaskowyz.hh
  ../include/Prostopadloscian.hh
  ../include/Przeszkody.hh
+ ../include/lacze_do_gnuplota.hh
  ../include/matrix.hh
  ../include/matrix3x3.hh
  ../include/size.hh
@@ -71,6 +75,7 @@ CMakeFiles/engine.dir/src/PPlaskowyz.cpp.o
 CMakeFiles/engine.dir/src/Prostopadloscian.cpp.o
  ../include/BrylaGeometryczna.hh
  ../include/Prostopadloscian.hh
+ ../include/Przeszkody.hh
  ../include/matrix.hh
  ../include/matrix3x3.hh
  ../include/size.hh

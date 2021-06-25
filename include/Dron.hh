@@ -2,9 +2,18 @@
 
 #include "Prostopadloscian.hh"
 #include "Graniastoslup6.hh"
+#include "Przeszkody.hh"
+// #include "Scena.hh"
+#include <unistd.h>
+#include <list>
+#include "lacze_do_gnuplota.hh"
+#include <iomanip>
+#include <memory>
+#include <fstream>
+#include <string>
 
 
-class Dron
+class Dron 
 {
 int licznik_dronow;
 int nr1=1;
@@ -13,8 +22,10 @@ int iddrona;
 
 Vector<3> droga;
 
-double tab[3];
+double promien=40;
 Vector<3> dwojka;
+
+Vector<3> srodekD;
 
 // Matrix<3> mac;
 Prostopadloscian  *korpus;
@@ -24,8 +35,6 @@ Graniastoslup *wirniki1[4];
 // string PLIK_TRASY_PRZELOTU;
 public:
 
-// Vector<3> droga;
-// Dron(int id=0);
 Dron(int id);
 void ruch(Vector<3> droga, double katOZ, double katOY /*, double OX*/);
 void obrot(double kat);
@@ -40,8 +49,10 @@ void zwiad2(PzG::LaczeDoGNUPlota &Lacze,double promien);//2 wersja
 
 void zapisz();
 
-void wspolrzedne();
+Vector<3> wspolrzedne();
 
+    void get_srodek() const ;
+    
 
 };
 

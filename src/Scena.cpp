@@ -1,40 +1,6 @@
 #include "Scena.hh"
 
 
-
-// Scena::Scena(Vector<3> scr, double dlugosc, double szerokosc, double glebokosc )
-// {
-//     katOX = 0;
-//     katOY = 0;
-//     katOZ = 0;
-//     Vector<3> tmp;
-//     int m=0;
-//     k=0;
-//     for(int i=-dlugosc/2; i<=dlugosc/2; i+=10){
-//        for(int j=-szerokosc/2; j<=szerokosc/2; j+=10){
-//                 tmp[0]=i;
-//                 tmp[1]=j;
-//                 // if(m%2==0)
-//                 tmp[2]=glebokosc;
-//                 // else
-//                 // tmp[2]=glebokosc+fala;
-
-//                 scr1.push_back(tmp);
-//                 m++;
-//         }
-//         k++;
-//     }
-//     ofstream plik;
-//         plik.open(nazwa_pliku);
-//     for(int i=0; i<(int)scr1.size(); i++){
-//         if(i%k==0)
-//         plik<<endl;
-//         plik<<scr1[i]<<endl;
-//     }
-//     plik.close();
-// }
-
-
 /*!       
     \brief
     konstryktor sceny 
@@ -53,11 +19,7 @@ Scena::Scena(double dlugosc, double szeroksc,double glebokosc, string nazwa_plik
        for(int j=-szeroksc/2; j<=szeroksc/2; j+=10){
                 tmp[0]=i;
                 tmp[1]=j;
-                // if(m%2==0)
                 tmp[2]=glebokosc;
-                // else
-                // tmp[2]=glebokosc+fala;
-
                 scr1.push_back(tmp);
                 m++;
         }
@@ -92,7 +54,13 @@ void Scena::zapis()
     plik.close();
 }
 
-   
+
+
+/*!       
+    \brief
+    move
+    funkcja sluzy do poruszania scena o zadany wektor
+ */   
 void Scena::move(const Vector<3> &v)
 {
     for (int i = 0; i < (int)scr1.size(); i++)
@@ -102,49 +70,109 @@ void Scena::move(const Vector<3> &v)
 }
 
 
-void Scena::add_basic_objects(PzG::LaczeDoGNUPlota &Lacze, Vector<3> place, double xwth, double ywth,int k,int rodzaj)
+// std::string Scena::get_nazwa() const
+// {
+//     return nazwa_pliku;
+// }
+
+
+/*!       
+    \brief
+    add_basic_objects
+    funkcja sluzy do dodawania na powierzchnie sceny przeszkody
+ */   
+void Scena::add_basic_objects(list<std::shared_ptr<Przeszkody> > &p,PzG::LaczeDoGNUPlota &Lacze, Vector<3> place, double xwth, double ywth,int k,int rodzaj)
 {   
     Vector<3> pomocniczyprzeszkoda;
        pomocniczyprzeszkoda[0]=-50;
        pomocniczyprzeszkoda[1]=-50;
-    // int przeszk1=1,maselko=2;
-    /*std::*/list<shared_ptr<Przeszkody> > p; /*= std::*p.make_shared<Ostroslup> (pomocniczyprzeszkoda, 50,50,90,"..datasets/prze"+to_string(przeszk1)+".dat","..datasets/prze2"+to_string(maselko)+".dat");*/
-    // double tab1[3] = {20, 30, 15};
-    // Vector<3> vec(tab1);
-    // int k=0;
-    // list<shared_ptr<Gran> > g;
-    // list<shared_ptr<Prostopadloscian> > p;
     if(k==1)
     {
         std::cout<<"madam"<<std::endl;
-        // (*--p.end())->zapis();
-        // std::cout<<"troche"<<std::endl;
-        // Lacze.DodajNazwePliku( (*--p.end())->nazwa().c_str());
-        // std::cout<<"plastikowy"<<std::endl;
-        // Lacze.UsunOstatniaNazwe();
-        Scena::nr = Scena::nr - 1;
-        // std::ostream << p;
-        // std::cout<<"kalinka"<<std::endl;
-        //  for(list<shared_ptr<Przeszkody> >::iterator i=p.begin(); i!= p.end(); i++)
+
+        // Scena::nr = Scena::nr - 1;
+        //  int i = 0;
+        // for (std::list<std::shared_ptr<Przeszkody>>::const_iterator a = p.begin(); a != p.end(); a++)
+        // {
+        //     cout << i << ": " << (*a)->get_nazwa() << endl;
+        //     i++;
+        // }
+        // cout << "podaj numer" << endl;
+
+        // int nr;
+        // cin >> nr;
+        // std::list<std::shared_ptr<Przeszkody>>::const_iterator a = p.begin();
+        // for (int j = 0; j < nr; j++)
         // {
 
-        //         std::cout<<"kasia lubi koty "<<std::endl;
-        //         (*--i)->zapis();
-        //         std::cout<<"marcin lubi kasie  "<<std::endl;
-        //                 // Lacze.UsunOstatniaNazwe();
-        //                 // Lacze.DodajNazwePliku( (*--p.end())->nazwa().c_str());
-        //                 std::cout<<"tomek lubi marcina <3 "<<std::endl;
+        //     a++;
         // }
-        // list<shared_ptr<Przeszkody> >::iterator i = p.end();
-        // p.erase(--i,p.end());
-        
-        // (*--p.end())->zapis();
-        // std::cout<<"Malinka"<<std::endl;
-        //   (*p.end())->zapis();
 
-        // std::cout<<"placek"<<std::endl;
-        // Lacze.DodajNazwePliku( (*p.end())->nazwa().c_str());
-        // std::cout<<"kalinka"<<std::endl;
+        //  std::cout<<"las"<<std::endl;
+        //  //Tutaj wywala seg
+        // //  int z;
+        // //  z=a;
+        // //  std::cout<<z<<std::endl;
+
+        // // std::cout<<"maja"<<std::endl;
+
+        // //  std::cout<<(*a)->nazwa()<<std::endl;
+        // Lacze.UsunNazwePliku((*a)->nazwa());
+        // //  std::cout<<"koleos"<<std::endl;
+
+//najpierw zwolnic pamiec frreeee
+        // // Lacze.UsunNazwePliku((*a)->get_nazwa());
+
+        // // std::cout<<"nie wiem"<<std::endl;
+        // //Tutaj wywala seg
+        // p.erase(a);
+        // // std::cout<<"kociak"<<std::endl;
+
+
+
+
+
+        // std::cout<<"madam"<<std::endl;
+
+        // Scena::nr = Scena::nr - 1;
+        // //  int i = 0;
+        // cout << "podaj numer" << endl;
+
+        // int nr;
+        // cin >> nr;
+        // for (std::list<std::shared_ptr<Przeszkody>>::const_iterator a = p.begin(); a != p.end(); a++)
+        // {
+        //     if(*a < nr)
+        //     {
+        //         Lacze.UsunNazwePliku((*a)->nazwa());
+        //         p.erase(a);       
+        //     }
+        //     // cout << i << ": " << (*a)->get_nazwa() << endl;
+        //     // i++;
+
+        // }
+        // cout << "podaj numer" << endl;
+
+        // int nr;
+        // cin >> nr;
+        // std::list<std::shared_ptr<Przeszkody>>::const_iterator a = p.begin();
+        // for (int j = 0; j < nr; j++)
+        // {
+
+        //     a++;
+        // }
+
+        //  std::cout<<"las"<<std::endl;
+        //  std::cout<<(*a)->nazwa()<<std::endl;
+        // Lacze.UsunNazwePliku((*a)->nazwa());
+    
+        // Lacze.UsunNazwePliku((*a)->get_nazwa());
+
+        // std::cout<<"nie wiem"<<std::endl;
+        //Tutaj wywala seg
+        // p.erase(a);
+        
+
     }
     else
     {
@@ -158,31 +186,15 @@ void Scena::add_basic_objects(PzG::LaczeDoGNUPlota &Lacze, Vector<3> place, doub
         /*(*p) =*/ p.push_back(make_shared<PPlaskowyz>(place, xwth,ywth,50,  "../datasets/pplaskowyz_default_sample"+to_string(Scena::nr)+".dat", "../datasets/pplaskowyz_default_final"+to_string(Scena::nr)+".dat"));
         }
 
-
-
-
         Scena::nr = Scena::nr + 1;
-        // double tab[3] = {100, 100, 7.5};
-        // Vector<3> tran(tab);
-        // *p = p->translation(tran);
-        //  p->zapis();
-        //  Lacze.DodajNazwePliku((p)->nazwa().c_str());
         
-        for(list<shared_ptr<Przeszkody> >::iterator i=p.begin(); i!= p.end(); i++)
+        for(list<shared_ptr<Przeszkody> >::const_iterator i=p.begin(); i!= p.end(); i++)
         {
-                //    (*i)->set_katOY(0);
-                //  (*i)->set_katOZ(rand()%360);
-                //  Vector<3> wek;
-                //  wek[0]=rand()%20+20;
-        //       (*i)->set_Przesuniecie(wek);
-                //  (*i)->translacja();
-                // std::cout<<"kasia lubi koty "<<std::endl;
+                
                 (*i)->zapis();
-                // std::cout<<"marcin lubi kasie  "<<std::endl;
-                        Lacze.DodajNazwePliku((*i)->nazwa().c_str());
-                        // std::cout<<"tomek lubi marcina <3 "<<std::endl;
+                        Lacze.DodajNazwePliku((*i)->get_nazwa().c_str());
+                        
         }
-    
     }
-
 }
+

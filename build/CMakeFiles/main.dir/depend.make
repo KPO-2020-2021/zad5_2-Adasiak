@@ -10,6 +10,7 @@ CMakeFiles/main.dir/app/main.cpp.o: ../include/PPlaskowyz.hh
 CMakeFiles/main.dir/app/main.cpp.o: ../include/Prostopadloscian.hh
 CMakeFiles/main.dir/app/main.cpp.o: ../include/Przeszkody.hh
 CMakeFiles/main.dir/app/main.cpp.o: ../include/Scena.hh
+CMakeFiles/main.dir/app/main.cpp.o: ../include/lacze_do_gnuplota.hh
 CMakeFiles/main.dir/app/main.cpp.o: ../include/matrix.hh
 CMakeFiles/main.dir/app/main.cpp.o: ../include/matrix3x3.hh
 CMakeFiles/main.dir/app/main.cpp.o: ../include/size.hh

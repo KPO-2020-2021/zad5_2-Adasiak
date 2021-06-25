@@ -57,8 +57,9 @@ Ostroslup::Ostroslup(Vector<3> pkt, double dlugosc ,double szerokosc, double wys
 
     pkt1[15][2] += wysokosc;
 /*------------------------------------------*/
-
-
+    this->srodek=this->srodek+pkt;
+    set_srodek(pkt);
+    
  ofstream plik;
         plik.open(nazwa_pliku);
     for(int i=0; i<(int)pkt1.size(); i++)
@@ -88,4 +89,14 @@ std::ostream &operator<<(std::ostream &Strm,
     return Strm;
 }
 
+
+/*!       
+    \brief
+    wez_srodek
+    funkcja zwraca srodek ostroslupa 
+ */
+Vector<3> Ostroslup::wez_srodek() 
+{
+    return srodek;
+}
 

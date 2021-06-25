@@ -17,14 +17,10 @@ class Graniastoslup : public BrylaGeometryczna
 public:
     Graniastoslup(){};
     
-    // Graniastoslup(Vector<3> srodek,double promien, string nazwa_pliku, string nazwa_pliku_do_zapisu);
-
-
     Graniastoslup(Vector<3> pkt, double h, double w, double d, string nazwa_pliku, string nazwa_pliku_do_zapisu);
-
+    
+    Vector<3> wez_srodek();
  
 };
-
-
 
 std::ostream &operator<<(std::ostream &Strm, const Graniastoslup &Pr);

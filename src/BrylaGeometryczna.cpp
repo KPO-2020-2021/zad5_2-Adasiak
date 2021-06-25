@@ -2,18 +2,37 @@
 
 
 
+/*!       
+    \brief
+    set_srodek
+    funkcja odpowiada za pobranie srodka byryly geometrycznej i zapisanie jej w odpowiedniej zmiennej 
+ */
+void BrylaGeometryczna::set_srodek(Vector<3> srodek)
+{
+    this->srodek = srodek;
+}
 
 
+/*!       
+    \brief
+    wez_srodek
+    funkcja zwraca srodek bryly geometryczneij 
+ */
+Vector<3> BrylaGeometryczna::wez_srodek() 
+{
+    return srodek;
+}
 
-// void BrylaGeometryczna::move(const Vector<3> &v)
-// {
-//     for (int i = 0; i < (int)pkt1.size(); i++)
-//     {
-//         pkt1[i] = pkt1[i] + v;
-//     }
-// }
 
-
+/*!       
+    \brief
+    get_nazwa
+    funkcja zwraca nazwe pliku bryly geometryczneij 
+ */
+std::string BrylaGeometryczna::get_nazwa() const
+{
+    return nazwa_pliku;
+}
 
 /*!       
     \brief
@@ -29,11 +48,6 @@ void BrylaGeometryczna::move(const Vector<3> &v)
     }
 }
 
-/*mozna v zamienic z przesuniecie wtedy "bedzie kontakt z baza" */
-
-
-
-
 /*!       
     \brief
     Funkcja sluzy do obrotu bryly wzgledem srodka ukladu wsplrzednych
@@ -41,10 +55,7 @@ void BrylaGeometryczna::move(const Vector<3> &v)
 
 void BrylaGeometryczna::obrotOZ(double kat)
 {
-    // Vector<3> tmp;
-    // tmp = (pkt1[1] - pkt1[0])/2 +tmp;
-    // tmp = (pkt1[2] - pkt1[0])/2 +tmp; 
-
+    
     for (int i = 0; i < (int)pkt1.size(); i++)
     {
         pkt1[i] = (macierzobrotZ(kat)*((pkt1[i] ))) ;
@@ -66,15 +77,11 @@ void BrylaGeometryczna::obrotP(double kat, Vector<3> a)
     tmp[0]=0;
     tmp[1]=0;
     tmp[2]=0;
-    // tmp = (pkt1[1] - a)/2 +tmp ;
-    // tmp = (pkt1[2]- a)/2 +tmp;
     double q=15,w=15;
     // q = 
     tmp[0] = (q + a[0]) /*+tmp*/ ;
     tmp[1] = (w + a[1]) /*+tmp*/; 
     
-    // tmp[0]= 15;
-    // tmp[1]= 15;
 
     for (int i = 0; i < (int)pkt1.size(); i++)
     {
@@ -104,13 +111,7 @@ void BrylaGeometryczna::obrotW(double kat)
 
 void BrylaGeometryczna::obrotW1(double kat,Vector<3> b)
 {
-    // Vector<3> ujem;
-    // ujem[0]=-1;
-    // ujem[1]=-1;
-    // ujem[2]=-1;
-    // Vector<3> tmp;
-    // tmp[0]+= 15;
-    // tmp[1]+= 15;
+    
     double z=15;
     Vector<3> tmp;
     tmp[0]=0;

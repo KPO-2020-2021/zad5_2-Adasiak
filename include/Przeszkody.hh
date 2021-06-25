@@ -1,18 +1,21 @@
 #pragma once 
 
-#include "Dron.hh"
-#include "BrylaGeometryczna.hh"
+#include "vector.hh"
+#include <vector>
+#include  <string>
+#include <memory>
+#include <unistd.h>
+#include <list>
+#include <iomanip>
 
 
-class Przeszkody: public BrylaGeometryczna 
+class Przeszkody 
 {
 
 public:
-
-    // Przeszkody(Vector<3> pkt1,double dlugosc, double szerokosc, double wysokosc, string nazwa_pliku, string nazwa_pliku_do_zapisu)/*:BrylaGeometryczna( Vector<3> pkt1, dlugosc,  szerokosc,  wysokosc,  nazwa_pliku,  nazwa_pliku_do_zapisu)*/{};
-
-
-
-
+    virtual std::string get_nazwa() const=0;
+    virtual void zapis()=0;
+    virtual Vector<3> wez_srodek() =0 ;
+    virtual double promien()=0;
 };
 

@@ -17,12 +17,30 @@ string
 -
 vector
 -
+Przeszkody.hh
+../include/Przeszkody.hh
 
 ../include/Dron.hh
 Prostopadloscian.hh
 ../include/Prostopadloscian.hh
 Graniastoslup6.hh
 ../include/Graniastoslup6.hh
+Przeszkody.hh
+../include/Przeszkody.hh
+unistd.h
+-
+list
+-
+lacze_do_gnuplota.hh
+../include/lacze_do_gnuplota.hh
+iomanip
+-
+memory
+-
+fstream
+-
+string
+-
 
 ../include/Gran.hh
 BrylaGeometryczna.hh
@@ -49,8 +67,6 @@ string
 -
 
 ../include/Ostroslup.hh
-BrylaGeometryczna.hh
-../include/BrylaGeometryczna.hh
 Przeszkody.hh
 ../include/Przeszkody.hh
 Dron.hh
@@ -61,6 +77,8 @@ iostream
 ../include/PPlaskowyz.hh
 Przeszkody.hh
 ../include/Przeszkody.hh
+Dron.hh
+../include/Dron.hh
 stdlib.h
 -
 
@@ -71,10 +89,20 @@ stdlib.h
 -
 
 ../include/Przeszkody.hh
-Dron.hh
-../include/Dron.hh
-BrylaGeometryczna.hh
-../include/BrylaGeometryczna.hh
+vector.hh
+../include/vector.hh
+vector
+-
+string
+-
+memory
+-
+unistd.h
+-
+list
+-
+iomanip
+-
 
 ../include/Scena.hh
 vector
@@ -99,7 +127,11 @@ Gran.hh
 ../include/Gran.hh
 PPlaskowyz.hh
 ../include/PPlaskowyz.hh
+Przeszkody.hh
+../include/Przeszkody.hh
 list
+-
+iomanip
 -
 
 ../include/lacze_do_gnuplota.hh
@@ -140,6 +172,58 @@ iostream
 cmath
 -
 initializer_list
+-
+
+/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/include/lacze_do_gnuplota.hh
+string
+-
+list
+-
+vector
+-
+
+/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/BrylaGeometryczna.cpp
+BrylaGeometryczna.hh
+/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/BrylaGeometryczna.hh
+
+/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/Dron.cpp
+Dron.hh
+/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/Dron.hh
+lacze_do_gnuplota.hh
+/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/lacze_do_gnuplota.hh
+unistd.h
+-
+
+/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/Gran.cpp
+Gran.hh
+/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/Gran.hh
+
+/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/Graniastoslup6.cpp
+Graniastoslup6.hh
+/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/Graniastoslup6.hh
+../include/lacze_do_gnuplota.hh
+/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/include/lacze_do_gnuplota.hh
+iomanip
+-
+
+/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/Ostroslup.cpp
+Ostroslup.hh
+/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/Ostroslup.hh
+
+/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/PPlaskowyz.cpp
+PPlaskowyz.hh
+/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/PPlaskowyz.hh
+../include/lacze_do_gnuplota.hh
+/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/include/lacze_do_gnuplota.hh
+iomanip
+-
+
+/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/Prostopadloscian.cpp
+Prostopadloscian.hh
+/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/Prostopadloscian.hh
+../include/lacze_do_gnuplota.hh
+/home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/include/lacze_do_gnuplota.hh
+iomanip
 -
 
 /home/wiktoradasiak/Pulpit/po1/zad5_2-Adasiak/src/Scena.cpp

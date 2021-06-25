@@ -11,7 +11,9 @@
 #include "Ostroslup.hh"
 #include "Gran.hh"
 #include "PPlaskowyz.hh"
+#include "Przeszkody.hh"
 #include <list>
+#include <iomanip>
 
 using namespace std;
 
@@ -29,9 +31,9 @@ class Scena
     string nazwa_pliku_do_zapisu;
     int k=0;// ilosc punktów na prostej
     int nr=0;
+    // PzG::LaczeDoGNUPlota Lacze;
     public:
 
-    // Scena(Vector<3> scr, double dlugosc, double szerokosc, double glebokosc );
     Scena(double dlugosc, double szeroksc,double glebokosc,  string nazwa_pliku, string nazwa_pliku_do_zapisu);
 
     void zapis();
@@ -45,7 +47,10 @@ class Scena
     Vector<3> operator [](int i)const {return scr1[i];}
 
 
-    void add_basic_objects(PzG::LaczeDoGNUPlota &Lacze,Vector<3> place, double xwth, double ywth,int k,int rodzaj);
+    void add_basic_objects(list<std::shared_ptr<Przeszkody> > &p,PzG::LaczeDoGNUPlota &Lacze,Vector<3> place, double xwth, double ywth,int k,int rodzaj);
+
+   
+    // std::string get_nazwa() const;
 
 
 };

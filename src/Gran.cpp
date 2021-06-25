@@ -17,8 +17,6 @@ Gran::Gran(Vector<3> pkt, double dlugosc ,double szerokosc, double wysokosc, str
     pkt1[2][0] +=dlugosc; 
     pkt1[2][1] -=szerokosc;
 
-    // pkt1[3][2] += wysokosc;
-
     pkt1[3][0] +=dlugosc; 
     pkt1[3][1] -=szerokosc;
     pkt1[3][2] += wysokosc;
@@ -58,9 +56,6 @@ Gran::Gran(Vector<3> pkt, double dlugosc ,double szerokosc, double wysokosc, str
     pkt1[11][2] +=wysokosc;
 
 /*--------------------------------------------*/
-    // pkt1[10][0] -=dlugosc; 
-    // pkt1[10][1] +=szerokosc;
-
 
     pkt1[12][0] -=dlugosc; 
     pkt1[12][1] -=szerokosc;
@@ -80,8 +75,6 @@ Gran::Gran(Vector<3> pkt, double dlugosc ,double szerokosc, double wysokosc, str
     pkt1[16][0] +=dlugosc; 
     pkt1[16][1] -=szerokosc;
 
-    // pkt1[3][2] += wysokosc;
-
     pkt1[17][0] +=dlugosc; 
     pkt1[17][1] -=szerokosc;
     pkt1[17][2] += wysokosc;
@@ -89,15 +82,9 @@ Gran::Gran(Vector<3> pkt, double dlugosc ,double szerokosc, double wysokosc, str
     pkt1[18][0] -=dlugosc; 
     pkt1[18][1] -=szerokosc;
     pkt1[18][2] += wysokosc;
-
-    // pkt1[13][0] -=dlugosc; 
-    // pkt1[13][1] -=szerokosc;
-
-    // pkt1[14][0] +=dlugosc; 
-    // pkt1[14][1] -=szerokosc;
-
-    // pkt1[15][2] += wysokosc;
 /*------------------------------------------*/
+
+     BrylaGeometryczna::srodek=pkt;
 
 
  ofstream plik;
@@ -129,4 +116,14 @@ std::ostream &operator<<(std::ostream &Strm,
     return Strm;
 }
 
+
+/*!       
+    \brief
+    wez_srodek
+    funkcja zwraca srodek grani 
+ */
+Vector<3> Gran::wez_srodek() 
+{
+    return srodek;
+}
 

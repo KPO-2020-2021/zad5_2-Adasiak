@@ -3,9 +3,6 @@
 #include <unistd.h>
 #define PLIK_TRASY_PRZELOTU "..datasets/trasa_przelotu.dat"
 
-
-
-
 /*!       
     \brief
     konstruktor drona
@@ -17,32 +14,42 @@
 */
 Dron::Dron(int id)
 {
-    Dron::licznik_dronow++;
-    // Dron::nrdrona=id;
+  if (id == 1)
+  {
+    iddrona = id; 
+   // Lacze.ZmienKolor(2);
+    korpus = new Prostopadloscian(droga, 30, 30, 20, "../datasets/korp.dat", "../datasets/korp2.dat");
+    wirniki[0] = new Graniastoslup((*korpus)[4], 12, 12, 10, "../datasets/wirnik1.dat", "../datasets/wirnik1_2.dat");
+    wirniki[1] = new Graniastoslup((*korpus)[5], 12, 12, 10, "../datasets/wirnik2.dat", "../datasets/wirnik2_2.dat");
+    wirniki[2] = new Graniastoslup((*korpus)[6], 12, 12, 10, "../datasets/wirnik3.dat", "../datasets/wirnik3_2.dat");
+    wirniki[3] = new Graniastoslup((*korpus)[7], 12, 12, 10, "../datasets/wirnik4.dat", "../datasets/wirnik4_2.dat");
+    // korpus->ZmienKolor(5);
+    // double x,y,z;
+    // Vector<3> jeden,dwa,trzy;
+    // jeden=(*korpus)[0];
+    // dwa=(*korpus)[3];
 
-  if(id==1){
-    iddrona=id;
-    korpus = new Prostopadloscian( droga,30, 30, 20 ,"../datasets/korp.dat","../datasets/korp2.dat");
-    wirniki[0] = new Graniastoslup((*korpus)[4], 12,12,10,"../datasets/wirnik1.dat","../datasets/wirnik1_2.dat");
-    wirniki[1] = new Graniastoslup((*korpus)[5], 12,12,10 ,"../datasets/wirnik2.dat","../datasets/wirnik2_2.dat");
-    wirniki[2] = new Graniastoslup((*korpus)[6], 12,12,10 ,"../datasets/wirnik3.dat","../datasets/wirnik3_2.dat");
-    wirniki[3] = new Graniastoslup((*korpus)[7], 12,12,10 ,"../datasets/wirnik4.dat","../datasets/wirnik4_2.dat");
+    // trzy=dwa-jeden;
+    // trzy[2]=trzy[2]*2;
+    srodekD = ((*korpus)[3] - (*korpus)[0]) / 2;
+    // srodekD=srodekD+(korpus[3][1]-korpus[0][1])/2;
+    // srodekD=srodekD+korpus[0][2];
+
+    // srodekD=trzy;
   }
-  if(id==2){
-    iddrona=id;
-    double a=-100,b=-100;
-    Dron::dwojka[0]=a;
-    Dron::dwojka[1]=b;
+  if (id == 2)
+  {
+    iddrona = id;
+    double a = -100, b = -100;
+    Dron::dwojka[0] = a;
+    Dron::dwojka[1] = b;
 
-    korpus1 = new Prostopadloscian( dwojka,30, 30, 20 ,"../datasets/korp3.dat","../datasets/korp4.dat");
-    wirniki1[0] = new Graniastoslup((*korpus1)[4], 12,12,10,"../datasets/wirnik1_3.dat","../datasets/wirnik1_4.dat");
-    wirniki1[1] = new Graniastoslup((*korpus1)[5], 12,12,10 ,"../datasets/wirnik2_3.dat","../datasets/wirnik2_4.dat");
-    wirniki1[2] = new Graniastoslup((*korpus1)[6], 12,12,10 ,"../datasets/wirnik3_3.dat","../datasets/wirnik3_4.dat");
-    wirniki1[3] = new Graniastoslup((*korpus1)[7], 12,12,10 ,"../datasets/wirnik4_3.dat","../datasets/wirnik4_4.dat");
-
+    korpus1 = new Prostopadloscian(dwojka, 30, 30, 20, "../datasets/korp3.dat", "../datasets/korp4.dat");
+    wirniki1[0] = new Graniastoslup((*korpus1)[4], 12, 12, 10, "../datasets/wirnik1_3.dat", "../datasets/wirnik1_4.dat");
+    wirniki1[1] = new Graniastoslup((*korpus1)[5], 12, 12, 10, "../datasets/wirnik2_3.dat", "../datasets/wirnik2_4.dat");
+    wirniki1[2] = new Graniastoslup((*korpus1)[6], 12, 12, 10, "../datasets/wirnik3_3.dat", "../datasets/wirnik3_4.dat");
+    wirniki1[3] = new Graniastoslup((*korpus1)[7], 12, 12, 10, "../datasets/wirnik4_3.dat", "../datasets/wirnik4_4.dat");
   }
-
-
 }
 
 /*!       
@@ -50,19 +57,22 @@ Dron::Dron(int id)
     Funckaj sluzaca do wyswietlania wspolrzednych punktu od ktorego zacynalismy tworzenie drona
 */
 
-void Dron::wspolrzedne()
+Vector<3> Dron::wspolrzedne()
 {
   Vector<3> pom;
-  if(iddrona==1)
+  if (iddrona == 1)
   {
-    pom=Dron::droga;
-    std::cout<<pom<<std::endl;
+    pom = Dron::droga;
+    std::cout << pom << std::endl;
+    // return droga;
   }
-    if(iddrona==2)
+  if (iddrona == 2)
   {
-    pom=Dron::dwojka;
-    std::cout<<pom<<std::endl;
+    pom = Dron::dwojka;
+    std::cout << pom << std::endl;
+    // return dwojka;
   }
+  return pom;
 }
 
 /*!       
@@ -77,9 +87,9 @@ void Dron::wspolrzedne()
 
 */
 
-void Dron::ruch(Vector<3> droga, double katOZ, double katOY )
+void Dron::ruch(Vector<3> droga, double katOZ, double katOY)
 {
-  if(iddrona==1)
+  if (iddrona == 1)
   {
     wirniki[0]->set_katOZ(katOZ);
     wirniki[0]->obrotW(90);
@@ -93,7 +103,8 @@ void Dron::ruch(Vector<3> droga, double katOZ, double katOY )
     wirniki[2]->obrotW(90);
     wirniki[2]->move(droga);
 
-    wirniki[3]->set_katOZ(katOZ);;
+    wirniki[3]->set_katOZ(katOZ);
+    ;
     wirniki[3]->obrotW(90);
     wirniki[3]->move(droga);
 
@@ -108,11 +119,14 @@ void Dron::ruch(Vector<3> droga, double katOZ, double katOY )
     wirniki[3]->zapis();
 
     korpus->zapis();
-    
+
     Dron::droga = droga + Dron::droga;
+
+    // srodekD=srodekD+droga;
+
   }
-  
-  if(iddrona==2)
+
+  if (iddrona == 2)
   {
     wirniki1[0]->set_katOZ(katOZ);
     wirniki1[0]->obrotW(90);
@@ -126,7 +140,8 @@ void Dron::ruch(Vector<3> droga, double katOZ, double katOY )
     wirniki1[2]->obrotW(90);
     wirniki1[2]->move(droga);
 
-    wirniki1[3]->set_katOZ(katOZ);;
+    wirniki1[3]->set_katOZ(katOZ);
+    ;
     wirniki1[3]->obrotW(90);
     wirniki1[3]->move(droga);
 
@@ -141,14 +156,10 @@ void Dron::ruch(Vector<3> droga, double katOZ, double katOY )
     wirniki1[3]->zapis();
 
     korpus1->zapis();
-    
+
     Dron::dwojka = droga + Dron::dwojka;
   }
-    
-
 }
-
-
 
 /*!       
     \brief
@@ -159,20 +170,20 @@ void Dron::ruch(Vector<3> droga, double katOZ, double katOY )
 */
 void Dron::obrot(double kat)
 {
-    Vector<3> tmp;
-  if(iddrona==1)
+  Vector<3> tmp;
+  if (iddrona == 1)
   {
     wirniki[0]->obrotW(90);
-    wirniki[0]->obrotW1(kat,droga);
-    
+    wirniki[0]->obrotW1(kat, droga);
+
     wirniki[1]->obrotW(90);
-    wirniki[1]->obrotW1(kat,droga);
-    
+    wirniki[1]->obrotW1(kat, droga);
+
     wirniki[2]->obrotW(90);
-    wirniki[2]->obrotW1(kat,droga);
-    
+    wirniki[2]->obrotW1(kat, droga);
+
     wirniki[3]->obrotW(90);
-    wirniki[3]->obrotW1(kat,droga);
+    wirniki[3]->obrotW1(kat, droga);
 
     korpus->obrotP(kat, droga);
 
@@ -183,19 +194,19 @@ void Dron::obrot(double kat)
 
     korpus->zapis();
   }
-  if(iddrona==2)
+  if (iddrona == 2)
   {
     wirniki1[0]->obrotW(90);
-    wirniki1[0]->obrotW1(kat,dwojka);
-    
+    wirniki1[0]->obrotW1(kat, dwojka);
+
     wirniki1[1]->obrotW(90);
-    wirniki1[1]->obrotW1(kat,dwojka);
-    
+    wirniki1[1]->obrotW1(kat, dwojka);
+
     wirniki1[2]->obrotW(90);
-    wirniki1[2]->obrotW1(kat,dwojka);
-    
+    wirniki1[2]->obrotW1(kat, dwojka);
+
     wirniki1[3]->obrotW(90);
-    wirniki1[3]->obrotW1(kat,dwojka);
+    wirniki1[3]->obrotW1(kat, dwojka);
 
     korpus1->obrotP(kat, dwojka);
 
@@ -205,194 +216,183 @@ void Dron::obrot(double kat)
     wirniki1[3]->zapis();
 
     korpus1->zapis();
-  } 
+  }
 }
 
-// void Dron::zwiad(Vector<3> promien)
-// {
-    
-
-//     ruch(promien,0,0);
-
-//     wirniki[0]->obrotOZ(180.0);
-//     wirniki[1]->obrotOZ(180.0);
-//     wirniki[2]->obrotOZ(180.0);
-//     wirniki[3]->obrotOZ(180.0);
-//     korpus->obrotOZ(180.0);
-
-
-//     wirniki[0]->zapis();
-//     wirniki[1]->zapis();
-//     wirniki[2]->zapis();
-//     wirniki[3]->zapis();
-
-//     korpus->zapis();
-    
-
-// }
 
 std::ostream &operator<<(std::ostream &Strm,
                          /*const*/ Dron &P)
 {
-    Strm << P << endl;
-    return Strm;
+  Strm << P << endl;
+  return Strm;
 }
 
-bool Dron::DodajTrasePrzelotu(PzG::LaczeDoGNUPlota &Lacze ,double x2, double y2)
+bool Dron::DodajTrasePrzelotu(PzG::LaczeDoGNUPlota &Lacze, double x2, double y2)
 {
 
   // this->nazwa_pliku = nazwa_pliku;
   // this->nazwa_pliku_do_zapisu = nazwa_pliku_do_zapisu;
 
-  ofstream  StrmWy(PLIK_TRASY_PRZELOTU);
+  ofstream StrmWy(PLIK_TRASY_PRZELOTU);
 
-  if (!StrmWy.is_open()) {
+  if (!StrmWy.is_open())
+  {
     cerr << endl
-	 << " Nie mozna otworzyc do zapisu pliku: " << PLIK_TRASY_PRZELOTU << endl
-	 << endl;
+         << " Nie mozna otworzyc do zapisu pliku: " << PLIK_TRASY_PRZELOTU << endl
+         << endl;
     return false;
   }
 
-  double a,b;
-  if(iddrona==1){
-    a=droga[0]+15;
-    b=droga[1]+15;
+  double a, b;
+  if (iddrona == 1)
+  {
+    a = droga[0] + 15;
+    b = droga[1] + 15;
   }
-  if(iddrona==2){
-    a=droga[0]+15;
-    b=droga[1]+15;
+  if (iddrona == 2)
+  {
+    a = droga[0] + 15;
+    b = droga[1] + 15;
   }
-  Vector<3> s,d,f,g;
-  s[0]=a;
-  s[1]=b;
+  Vector<3> s, d, f, g;
+  s[0] = a;
+  s[1] = b;
 
-  d=s;
-  d[2]=80;
+  d = s;
+  d[2] = 80;
 
-  f=d;
-  f[0]+=x2;
-  f[1]+=y2;
+  f = d;
+  f[0] += x2;
+  f[1] += y2;
 
-  g=f;
-  g[2]=0;
+  g = f;
+  g[2] = 0;
   StrmWy << s << endl
-	 << d << endl
-	 << f << endl
-	 << g << endl;
-  Lacze.DodajNazwePliku(PLIK_TRASY_PRZELOTU);
+         << d << endl
+         << f << endl
+         << g << endl;
+  Lacze.DodajNazwePliku(PLIK_TRASY_PRZELOTU, 1);
   return !StrmWy.fail();
 }
+
 
 
 /*!       
     \brief
     Animacja lotu drona Ftunkcja odpowiada za powolne wyswietlanie ruchu drona przez co mozemy sledzic na ekranie jego ruch 
     funckja bazuje na operacjach ruchu drona oraz obrotu
+    w momecie odadanie drona sprawdzana jest lista na ktorej umieszczone sa przeszkody czy aby nie wystepuje kolizja 
 
 */
-void Dron::AnimacjaLotuDrona(PzG::LaczeDoGNUPlota &Lacze, double x1,double y1)
+
+void Dron::AnimacjaLotuDrona(PzG::LaczeDoGNUPlota &Lacze, double x1, double y1)
 {
-  
+
   double x_dron = 20, y_dron = 20, z_dron = 0;
   // double KatOr_st = 0;
 
   //-------------------------------------
   // Wznoszenie ...
-  //
-  // DodajTrasePrzelotu(Lacze,x1,y1);
-  Vector<3> wznoszenie;
-  wznoszenie[2]=2;
-  cout << endl << "Wznoszenie ... " << endl;
-  for (; z_dron <= 80; z_dron += 2) 
-  {
-      ruch(wznoszenie,0,0);
-    // if (!PrzemiescDrona(KatOr_st,x_dron,y_dron,z_dron)) 
-    //     return false;
-    usleep(100000); // 0.1 ms
-    Lacze.Rysuj();
-  }
-
-  z_dron -= 2;
   
-  double c,d; 
-  c=atan2(y1,x1);
-  // std::cout << c  <<std::endl;
-  d =c*180/M_PI ;
-  // std::cout << d  <<std::endl;
-
-  cout << "Zmiana orientacji ... " << endl;
-  if(d>0)
   {
-      for ( int i=0; i <= d; i += 5) 
+
+    // if(z==0)
+    {
+      Vector<3> wznoszenie;
+      wznoszenie[2] = 2;
+      cout << endl
+           << "Wznoszenie ... " << endl;
+      for (; z_dron <= 100; z_dron += 2)
       {
-        
-        obrot(5);
+        ruch(wznoszenie, 0, 0);
+        // if (!PrzemiescDrona(KatOr_st,x_dron,y_dron,z_dron))
+        //     return false;
+        usleep(100000); // 0.1 ms
+        Lacze.Rysuj();
+      }
+
+      z_dron -= 2;
+
+      double c, d;
+      c = atan2(y1, x1);
+      // std::cout << c  <<std::endl;
+      d = c * 180 / M_PI;
+      // std::cout << d  <<std::endl;
+
+      cout << "Zmiana orientacji ... " << endl;
+      if (d > 0)
+      {
+        for (int i = 0; i <= d; i += 5)
+        {
+
+          obrot(5);
+
+          usleep(100000);
+          Lacze.Rysuj();
+        }
+      }
+      else
+      {
+        d = d * (-1);
+        for (int i = 0; i <= d; i += 5)
+        {
+
+          obrot(-5);
+
+          usleep(100000);
+          Lacze.Rysuj();
+        }
+      }
+
+      // KatOr_st -= 5;
+
+      //-------------------------------------
+      // Lot do przodu ...
+      //
+      double x, y;
+      double q, w;
+      if (iddrona == 1)
+      {
+        q = (droga[0] - 15.0);
+        w = (droga[1] - 15.0);
+      }
+      if (iddrona == 2)
+      {
+        q = (dwojka[0] - 15.0);
+        w = (dwojka[1] - 15.0);
+      }
+
+      x = (x1 - q) / 50;
+      y = (y1 - w) / 50;
+      Vector<3> lot;
+      lot[0] = x;
+      lot[1] = y;
+      cout << "Lot do przodu ... " << endl;
+      for (; (y_dron <= 50); x_dron += 1, y_dron += 1)
+      {
+
+        ruch(lot, 0, 0);
 
         usleep(100000);
         Lacze.Rysuj();
       }
+      x_dron -= 1, y_dron -= 1;
+    }
+
+    //-------------------------------------
+    // Opadanie ...
+    //
+    Vector<3> opadanie;
+    opadanie[2] = -2;
+    std::cout << "Opadanie ... " << endl;
+
+    for (; z_dron >= 0; z_dron -= 2)
+    {
+      ruch(opadanie, 0, 0);
+      usleep(100000); // 0.1 ms
+      Lacze.Rysuj();
+    }
   }
-  else
-  {
-    d=d*(-1);
-    for ( int i=0; i <= d; i += 5) 
-      {
-        
-        obrot(-5);
-
-        usleep(100000);
-        Lacze.Rysuj();
-      }
-  }
-
-  // KatOr_st -= 5;
-
-  //-------------------------------------
-  // Lot do przodu ...
-  //  
-  double x,y;
-  double q,w;
-  if(iddrona==1){
-    q=(droga[0]-15.0);
-    w=(droga[1]-15.0);
-  }
-  if(iddrona==2)
-  {
-    q=(dwojka[0]-15.0);
-    w=(dwojka[1]-15.0);
-  }
-  
-  x=(x1 - q)/50;
-  y=(y1 - w)/50;
-  Vector<3> lot;
-  lot[0]=x;
-  lot[1]=y;
-  cout << "Lot do przodu ... " << endl;
-  for (; (y_dron<=50) ; x_dron += 1, y_dron += 1) {
-    
-    ruch(lot,0,0);
-
-    usleep(100000);
-    Lacze.Rysuj();
-  }  
-  x_dron -= 1, y_dron -= 1;
-
-
-  //-------------------------------------
-  // Opadanie ...
-  //
-  Vector<3> opadanie;
-    opadanie[2]=-2;
-  cout << "Opadanie ... " << endl;
-  for (; z_dron >= 0; z_dron -= 2) {
-    
-      ruch(opadanie,0,0);
-
-    usleep(100000); // 0.1 ms
-    Lacze.Rysuj();
-  }
-
-//   return true;
 }
 
 /*!       
@@ -406,17 +406,19 @@ void Dron::AnimacjaLotuDrona(PzG::LaczeDoGNUPlota &Lacze, double x1,double y1)
     
 
 */
-void Dron::zwiad2(PzG::LaczeDoGNUPlota &Lacze,double promien)
+void Dron::zwiad2(PzG::LaczeDoGNUPlota &Lacze, double promien)
 {
-  
+
   Vector<3> kolejnypom;
-  if(iddrona==1){
-    kolejnypom=droga;
+  if (iddrona == 1)
+  {
+    kolejnypom = droga;
   }
-  if(iddrona==2){
-    kolejnypom=dwojka;
+  if (iddrona == 2)
+  {
+    kolejnypom = dwojka;
   }
-  
+
   double x_dron = 20, y_dron = 20, z_dron = 0;
   double KatOr_st = 0;
 
@@ -424,25 +426,27 @@ void Dron::zwiad2(PzG::LaczeDoGNUPlota &Lacze,double promien)
   // Wznoszenie ...
   //
   Vector<3> wznoszenie;
-  wznoszenie[2]=2;
-  cout << endl << "Wznoszenie ... " << endl;
-  for (; z_dron <= 80; z_dron += 2) 
+  wznoszenie[2] = 2;
+  cout << endl
+       << "Wznoszenie ... " << endl;
+  for (; z_dron <= 80; z_dron += 2)
   {
-      ruch(wznoszenie,0,0);
+    ruch(wznoszenie, 0, 0);
 
     usleep(100000); // 0.1 ms
     Lacze.Rysuj();
   }
 
   z_dron -= 2;
-  
-  // double katobr; 
+
+  // double katobr;
   // katobr = atan2(y1,x1) ;
   cout << "Zmiana orientacji ... " << endl;
-  for (; KatOr_st <= 45; KatOr_st += 5) {
-    
+  for (; KatOr_st <= 45; KatOr_st += 5)
+  {
+
     obrot(5);
-    
+
     usleep(100000);
     Lacze.Rysuj();
   }
@@ -450,30 +454,33 @@ void Dron::zwiad2(PzG::LaczeDoGNUPlota &Lacze,double promien)
 
   //-------------------------------------
   // Lot do przodu ...
-  //  
-  double x,y;
-  double a,b;
-  if(iddrona==1){
-    a=(droga[0]-15.0);
-    b=(droga[1]-15.0);
+  //
+  double x, y;
+  double a, b;
+  if (iddrona == 1)
+  {
+    a = (droga[0] - 15.0);
+    b = (droga[1] - 15.0);
   }
-  if(iddrona==2){
-    a=(droga[0]-15.0);
-    b=(droga[1]-15.0);
+  if (iddrona == 2)
+  {
+    a = (droga[0] - 15.0);
+    b = (droga[1] - 15.0);
   }
-  x=(promien -a)/50;
-  y=(promien -b)/50;
+  x = (promien - a) / 50;
+  y = (promien - b) / 50;
   Vector<3> lot;
-  lot[0]=x;
-  lot[1]=y;
+  lot[0] = x;
+  lot[1] = y;
   cout << "Lot do przodu ... " << endl;
-  for (; /*(x_dron <= 100)&&*/(y_dron<=50) ; x_dron += 1, y_dron += 1) {
-    
-    ruch(lot,0,0);
-    
+  for (; /*(x_dron <= 100)&&*/ (y_dron <= 50); x_dron += 1, y_dron += 1)
+  {
+
+    ruch(lot, 0, 0);
+
     usleep(100000);
     Lacze.Rysuj();
-  }  
+  }
   x_dron -= 1, y_dron -= 1;
 
   // Dron::droga[0]=promien;
@@ -481,99 +488,103 @@ void Dron::zwiad2(PzG::LaczeDoGNUPlota &Lacze,double promien)
 
   cout << droga << endl;
   cout << "Zmiana orientacji ... 1 " << endl;
-  for (int j=0; j <=90; j += 5) {
-    
+  for (int j = 0; j <= 90; j += 5)
+  {
+
     obrot(5);
-    
+
     usleep(100000);
     Lacze.Rysuj();
   }
 
   Vector<3> pomocniczy;
-  if(iddrona==1){
-  pomocniczy=droga;
+  if (iddrona == 1)
+  {
+    pomocniczy = droga;
   }
-  if(iddrona==2){
-    pomocniczy=dwojka;
+  if (iddrona == 2)
+  {
+    pomocniczy = dwojka;
   }
 
   // KatOr_st -= 5;
-
 
   cout << "Zwiad...." << endl;
 
-
-    if(iddrona==1){
-      Dron::droga[0]=kolejnypom[0]  -10;
-      Dron::droga[1]=kolejnypom[1]  -10;
-      // cout<<droga<<endl;
-    }
-    if(iddrona==2){
-      // cout<<kolejnypom<<endl;
-      dwojka[0]=kolejnypom[0]-10;
-      dwojka[1]=kolejnypom[1]-10;
-      // cout<<dwojka<<endl;
-    }
-  
-  for(int i=0; i<=180; i++)
+  if (iddrona == 1)
   {
-     obrot(2);
+    Dron::droga[0] = kolejnypom[0] - 10;
+    Dron::droga[1] = kolejnypom[1] - 10;
+    // cout<<droga<<endl;
+  }
+  if (iddrona == 2)
+  {
+    // cout<<kolejnypom<<endl;
+    dwojka[0] = kolejnypom[0] - 10;
+    dwojka[1] = kolejnypom[1] - 10;
+    // cout<<dwojka<<endl;
+  }
+
+  for (int i = 0; i <= 180; i++)
+  {
+    obrot(2);
 
     usleep(100000);
     Lacze.Rysuj();
   }
 
-  if(iddrona==1){
-      Dron::droga[0]=pomocniczy[0];
-      Dron::droga[1]=pomocniczy[1];
+  if (iddrona == 1)
+  {
+    Dron::droga[0] = pomocniczy[0];
+    Dron::droga[1] = pomocniczy[1];
   }
-  if(iddrona==2){
-    Dron::dwojka[0]=pomocniczy[0];
-    Dron::dwojka[1]=pomocniczy[1];
+  if (iddrona == 2)
+  {
+    Dron::dwojka[0] = pomocniczy[0];
+    Dron::dwojka[1] = pomocniczy[1];
   }
-   
-   cout << droga << endl;
+
+  cout << droga << endl;
   cout << "Zmiana orientacji ... 1 " << endl;
-  for (int k=0; k <= 90; k += 5) {
-    
+  for (int k = 0; k <= 90; k += 5)
+  {
+
     obrot(5);
-    
+
     usleep(100000);
     Lacze.Rysuj();
   }
-
 
   // KatOr_st -= 5;
 
-  cout<<"Powrót...."<<endl;
+  cout << "Powrót...." << endl;
   Vector<3> powrot;
-  powrot[0]=-(promien -10)/50;
-  powrot[1]=-(promien -10)/50;
-  for (int l=0; l<=50 ; l++) {
-    
-    ruch(powrot,0,0);
-    
+  powrot[0] = -(promien - 10) / 50;
+  powrot[1] = -(promien - 10) / 50;
+  for (int l = 0; l <= 50; l++)
+  {
+
+    ruch(powrot, 0, 0);
+
     usleep(100000);
     Lacze.Rysuj();
-  }  
+  }
   // x_dron -= 1, y_dron -= 1;
-
-
-
 
   //-------------------------------------
   // Opadanie ...
   //
   Vector<3> opadanie;
-    opadanie[2]=-2;
+  opadanie[2] = -2;
   cout << "Opadanie ... " << endl;
-  for (; z_dron >= 0; z_dron -= 2) {
-    
-      ruch(opadanie,0,0);
-    
+  for (; z_dron >= 0; z_dron -= 2)
+  {
+
+    ruch(opadanie, 0, 0);
+
     usleep(100000); // 0.1 ms
     Lacze.Rysuj();
   }
 
-//   return true;
+  //   return true;
 }

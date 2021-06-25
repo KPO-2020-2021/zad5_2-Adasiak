@@ -2,57 +2,6 @@
 #include "../include/lacze_do_gnuplota.hh"
 #include <iomanip>
 
-
-/*!
-    \brief
-    *Konstruktor Graniastoslupa. 
-    *Tworzymy Graniastoslupa wzgledem 1 wierzcholak (jego wspolrzednych ), 
-    * a nastepnie kolejne pkt1 dodajac do 1 wierzcholka szerokosc i wysokosc w zaleznosci od kolejnego wierzcholka
-    *
-    *  
-
-*/
-
-
-// Graniastoslup::Graniastoslup(Vector<3> srodek,double promien,string nazwa_pliku, string nazwa_pliku_do_zapisu){
-//     this->nazwa_pliku = nazwa_pliku;
-//     this->nazwa_pliku_do_zapisu = nazwa_pliku_do_zapisu;
-//     // double katOX = 0;
-//     // double katOY = 0;
-//     // double katOZ = 0;
-//     Vector<3> tmp;
-//     for(int i=0; i<=300; i+=60){
-//         tmp[2]=srodek[2];
-//         tmp[0]=srodek[0]+promien*sin(i*M_PI/180);
-//         tmp[1]=srodek[1]+promien*cos(i*M_PI/180);
-//         srodek[0];
-//         pkt1.push_back(tmp);
-//         pkt1.push_back(tmp);
-//         tmp[2]=srodek[2]+10;
-//         tmp[0]=srodek[0]+promien*sin(i*M_PI/180);
-//         tmp[1]=srodek[1]+promien*cos(i*M_PI/180);
-//         srodek[0];
-//         pkt1.push_back(tmp);
-//     }
-
-//     srodek[0];
-//     srodek[1];
-//     pkt1.push_back(pkt1[0]);
-//     pkt1.push_back(pkt1[1]);
-//     ofstream plik;
-//         plik.open(nazwa_pliku);
-//     for(int i=0; i<(int)pkt1.size(); i++)
-//     {
-//         if(i%2==0)
-//         plik<<endl;
-//         plik<<pkt1[i]<<endl;
-//     }
-//     plik.close();
-//     zapis();
-// }
-
-
-
 /*!
     \brief
     *Konstruktor Graniastoslupa. 
@@ -193,3 +142,13 @@ std::ostream &operator<<(std::ostream &Strm,
     return Strm;
 }
 
+
+/*!       
+    \brief
+    wez_srodek
+    funkcja zwraca srodek graniastoslupa 
+ */
+Vector<3> Graniastoslup::wez_srodek() 
+{
+    return srodek;
+}
