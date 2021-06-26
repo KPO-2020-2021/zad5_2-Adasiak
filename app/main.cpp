@@ -357,15 +357,12 @@ int main()
                      
                      if (powierzchnia == 2)
                      {
-                            dno.add_basic_objects(p,Lacze,tmpppp, xwth1, ywth1,0,2);
+                            dno.add_basic_objects(p,Lacze,place1, xwth1, ywth1,0,2);
                      }
                      
                      if (powierzchnia == 3)
                      {
-                            // std::cout << "Podaj scale wzdluz kolejnych osi OX, OY, OZ." << std::endl;
-                            // std::cin >> skala;
-
-                            dno.add_basic_objects(p,Lacze,tmpppp, xwth1, ywth1,0,3);
+                            dno.add_basic_objects(p,Lacze,place1, xwth1, ywth1,0,3);
                      }
                      
                      Lacze.Rysuj();

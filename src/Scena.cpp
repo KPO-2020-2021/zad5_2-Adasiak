@@ -86,93 +86,29 @@ void Scena::add_basic_objects(list<std::shared_ptr<Przeszkody> > &p,PzG::LaczeDo
     Vector<3> pomocniczyprzeszkoda;
        pomocniczyprzeszkoda[0]=-50;
        pomocniczyprzeszkoda[1]=-50;
-    if(k==1)
+   if(k==1)
     {
-        std::cout<<"madam"<<std::endl;
+        Scena::nr = Scena::nr - 1;
+         int i = 0;
+        for (std::list<std::shared_ptr<Przeszkody>>::const_iterator a = p.begin(); a != p.end(); a++)
+        {
+            cout << i << ": " << (*a)->get_nazwa() << endl;
+            i++;
+        }
+        cout << "podaj numer" << endl;
 
-        // Scena::nr = Scena::nr - 1;
-        //  int i = 0;
-        // for (std::list<std::shared_ptr<Przeszkody>>::const_iterator a = p.begin(); a != p.end(); a++)
-        // {
-        //     cout << i << ": " << (*a)->get_nazwa() << endl;
-        //     i++;
-        // }
-        // cout << "podaj numer" << endl;
+        int nr;
+        cin >> nr;
+        std::list<std::shared_ptr<Przeszkody>>::const_iterator a = p.begin();
+        for (int j = 0; j < nr; j++)
+        {
 
-        // int nr;
-        // cin >> nr;
-        // std::list<std::shared_ptr<Przeszkody>>::const_iterator a = p.begin();
-        // for (int j = 0; j < nr; j++)
-        // {
-
-        //     a++;
-        // }
-
-        //  std::cout<<"las"<<std::endl;
-        //  //Tutaj wywala seg
-        // //  int z;
-        // //  z=a;
-        // //  std::cout<<z<<std::endl;
-
-        // // std::cout<<"maja"<<std::endl;
-
-        // //  std::cout<<(*a)->nazwa()<<std::endl;
-        // Lacze.UsunNazwePliku((*a)->nazwa());
-        // //  std::cout<<"koleos"<<std::endl;
-
-//najpierw zwolnic pamiec frreeee
-        // // Lacze.UsunNazwePliku((*a)->get_nazwa());
-
-        // // std::cout<<"nie wiem"<<std::endl;
-        // //Tutaj wywala seg
-        // p.erase(a);
-        // // std::cout<<"kociak"<<std::endl;
-
-
-
-
-
-        // std::cout<<"madam"<<std::endl;
-
-        // Scena::nr = Scena::nr - 1;
-        // //  int i = 0;
-        // cout << "podaj numer" << endl;
-
-        // int nr;
-        // cin >> nr;
-        // for (std::list<std::shared_ptr<Przeszkody>>::const_iterator a = p.begin(); a != p.end(); a++)
-        // {
-        //     if(*a < nr)
-        //     {
-        //         Lacze.UsunNazwePliku((*a)->nazwa());
-        //         p.erase(a);       
-        //     }
-        //     // cout << i << ": " << (*a)->get_nazwa() << endl;
-        //     // i++;
-
-        // }
-        // cout << "podaj numer" << endl;
-
-        // int nr;
-        // cin >> nr;
-        // std::list<std::shared_ptr<Przeszkody>>::const_iterator a = p.begin();
-        // for (int j = 0; j < nr; j++)
-        // {
-
-        //     a++;
-        // }
-
-        //  std::cout<<"las"<<std::endl;
-        //  std::cout<<(*a)->nazwa()<<std::endl;
-        // Lacze.UsunNazwePliku((*a)->nazwa());
-    
-        // Lacze.UsunNazwePliku((*a)->get_nazwa());
-
-        // std::cout<<"nie wiem"<<std::endl;
-        //Tutaj wywala seg
-        // p.erase(a);
+            a++;
+        }
         
-
+        Lacze.UsunNazwePliku((*a)->get_nazwa());
+        
+        p.erase(a);
     }
     else
     {
