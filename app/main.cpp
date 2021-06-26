@@ -222,12 +222,14 @@ int main()
        Lacze.DodajNazwePliku("../datasets/wirnik2_2.dat",2);
        Lacze.DodajNazwePliku("../datasets/wirnik3_2.dat",2);
        Lacze.DodajNazwePliku("../datasets/wirnik4_2.dat",2);
+       Lacze.DodajNazwePliku("../datasets/czubek1_2.dat",2);
 
        Lacze.DodajNazwePliku("../datasets/korp4.dat",2);
        Lacze.DodajNazwePliku("../datasets/wirnik1_4.dat",2);
        Lacze.DodajNazwePliku("../datasets/wirnik2_4.dat",2);
        Lacze.DodajNazwePliku("../datasets/wirnik3_4.dat",2);
        Lacze.DodajNazwePliku("../datasets/wirnik4_4.dat",2);
+       Lacze.DodajNazwePliku("../datasets/czubek2_2.dat",2);
 
        
        // double marcin=45;

@@ -32,6 +32,7 @@ Prostopadloscian  *korpus;
 Graniastoslup *wirniki[4];
 Prostopadloscian  *korpus1;
 Graniastoslup *wirniki1[4];
+Prostopadloscian  *czubek[2];
 // string PLIK_TRASY_PRZELOTU;
 public:
 
